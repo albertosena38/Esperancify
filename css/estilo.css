@@ -1,0 +1,308 @@
+/* ================================
+   SISTEMA DE DESIGN (Design System)
+=================================== */
+
+/* 🎨 Paleta de Cores (8 cores) */
+:root {
+  --cor-primaria: #0077b6;
+  --cor-secundaria: #00b4d8;
+  --cor-terciaria: #90e0ef;
+  --cor-destaque: #ffb703;
+  --cor-erro: #e63946;
+  --cor-sucesso: #06d6a0;
+  --cor-fundo: #f5f5f5;
+  --cor-texto: #222222;
+
+  /* 🔤 Tipografia (hierarquia) */
+  --fonte-base: "Poppins", Arial, sans-serif;
+  --fonte-titulo: "Montserrat", sans-serif;
+
+  /* 📏 Tamanhos de fonte */
+  --fs-h1: 2.5rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.5rem;
+  --fs-p: 1rem;
+  --fs-small: 0.875rem;
+
+  /* 📐 Sistema de espaçamento (8px base) */
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 32px;
+  --esp-5: 48px;
+  --esp-6: 64px;
+
+  /* ⚙️ Grid */
+  --colunas: 12;
+  --gap: 16px;
+}
+
+/* ================================
+   ESTILOS GERAIS
+=================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-base);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+}
+
+/* ================================
+   CABEÇALHO E MENU RESPONSIVO
+=================================== */
+
+header {
+  background-color: var(--cor-primaria);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--esp-2) var(--esp-4);
+  position: relative;
+}
+
+header img {
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: var(--esp-3);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--cor-destaque);
+}
+
+/* Botão hambúrguer (mobile) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+}
+
+/* ================================
+   GRID PRINCIPAL (12 colunas)
+=================================== */
+main {
+  display: grid;
+  grid-template-columns: repeat(var(--colunas), 1fr);
+  gap: var(--gap);
+  padding: var(--esp-4);
+}
+
+/* ================================
+   SEÇÕES E TÍTULOS
+=================================== */
+section {
+  grid-column: span 12;
+  margin-bottom: var(--esp-4);
+  background: white;
+  padding: var(--esp-3);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-primaria);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  margin-bottom: var(--esp-2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  margin-bottom: var(--esp-1);
+}
+
+/* ================================
+   CARDS DE PROJETOS
+=================================== */
+article {
+  background: var(--cor-terciaria);
+  border-radius: 8px;
+  padding: var(--esp-3);
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+}
+
+article img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+article p {
+  font-size: var(--fs-p);
+}
+
+@media (max-width: 1024px) {
+  article {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 768px) {
+  article {
+    grid-column: span 12;
+  }
+}
+
+/* ================================
+   BOTÕES
+=================================== */
+button, .btn {
+  background: var(--cor-secundaria);
+  color: white;
+  border: none;
+  padding: var(--esp-2) var(--esp-3);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover, .btn:hover {
+  background: var(--cor-destaque);
+}
+
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* ================================
+   FORMULÁRIOS
+=================================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+  max-width: 600px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input, select {
+  padding: var(--esp-2);
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+input:focus, select:focus {
+  outline: 2px solid var(--cor-secundaria);
+}
+
+/* ================================
+   ALERTAS / FEEDBACK
+=================================== */
+.alert {
+  padding: var(--esp-2);
+  border-radius: 6px;
+  margin-bottom: var(--esp-2);
+  font-weight: bold;
+}
+
+.alert.sucesso {
+  background: var(--cor-sucesso);
+  color: white;
+}
+
+.alert.erro {
+  background: var(--cor-erro);
+  color: white;
+}
+
+/* ================================
+   FOOTER
+=================================== */
+footer {
+  background: var(--cor-primaria);
+  color: white;
+  text-align: center;
+  padding: var(--esp-2);
+  margin-top: var(--esp-4);
+}
+
+/* ================================
+   RESPONSIVIDADE / BREAKPOINTS
+=================================== */
+
+/* 💻 Desktop grande */
+@media (max-width: 1440px) {
+  :root { --fs-h1: 2.2rem; }
+}
+
+/* 🖥️ Laptop */
+@media (max-width: 1024px) {
+  nav ul {
+    gap: var(--esp-2);
+  }
+}
+
+/* 📱 Tablet */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: var(--cor-primaria);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: var(--esp-2);
+    border-radius: 8px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+}
+
+/* 📱 Smartphone médio */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 Smartphone pequeno */
+@media (max-width: 360px) {
+  header img {
+    height: 40px;
+  }
+}

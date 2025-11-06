@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esperancify | Projetos</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header>
+    <img src="imagens/Logo.png" alt="Logotipo da Esperancify">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Projetos Esperancify</h2>
+
+      <article>
+        <h3>Alimenta Esperança</h3>
+        <img src="imagens/Alimentando.jpg" alt="Distribuição de alimentos">
+        <p>O projeto garante alimentação digna a famílias carentes, distribuindo cestas básicas e refeições diárias em comunidades de baixa renda.</p>
+        <span class="badge">Alimentação</span>
+      </article>
+
+      <article>
+        <h3>Educa+ Futuro</h3>
+        <img src="imagens/Estudantes.png" alt="Aulas de reforço escolar">
+        <p>Oferecemos reforço escolar, cursos de informática e orientação vocacional para jovens, incentivando o desenvolvimento pessoal e profissional.</p>
+        <span class="badge">Educação</span>
+      </article>
+
+      <article>
+        <h3>Amigos dos Animais</h3>
+        <img src="imagens/Animais.jpeg" alt="Animais resgatados">
+        <p>Campanhas de adoção, resgate e cuidado de animais em situação de abandono, com foco em conscientização e bem-estar animal.</p>
+        <span class="badge">Proteção Animal</span>
+      </article>
+    </section>
+
+    <section>
+      <h2>Como Contribuir</h2>
+      <p>Você pode se voluntariar ou doar para apoiar nossos projetos. Cada gesto faz diferença!</p>
+      <div style="display:flex; gap:16px;">
+        <a class="btn" href="cadastro.html">Seja Voluntário</a>
+        <a class="btn" href="cadastro.html">Doe Agora</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Esperancify | Transformando solidariedade em ação.</p>
+  </footer>
+
+  <script>
+  function toggleMenu() {
+    document.querySelector("nav ul").classList.toggle("active");
+  }
+  </script>
+</body>
+</html>

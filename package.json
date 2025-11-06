@@ -1,0 +1,24 @@
+{
+  "name": "esperancify",
+  "version": "1.0.0",
+  "description": "Esperancify — site institucional e cadastro de voluntários",
+  "scripts": {
+    "clean": "rm -rf dist || rmdir /s /q dist",
+    "build:html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true ./index.html -o dist/index.html && html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true ./projetos.html -o dist/projetos.html && html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true ./cadastro.html -o dist/cadastro.html",
+    "build:css": "cleancss -o dist/css/estilo.min.css css/estilo.css",
+    "build:js": "terser js/app.js -c -m -o dist/js/app.min.js",
+    "build:images": "imagemin imagens/* --out-dir=dist/imagens",
+    "build": "npm run clean && mkdir -p dist/css dist/js dist/imagens && npm run build:html && npm run build:css && npm run build:js && npm run build:images",
+    "test:a11y": "axe-cli dist/index.html",
+    "start": "npx serve dist"
+  },
+  "devDependencies": {
+    "html-minifier-terser": "^7.0.0",
+    "clean-css-cli": "^5.3.0",
+    "terser": "^5.17.0",
+    "imagemin-cli": "^6.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.0",
+    "axe-cli": "^3.1.0"
+  }
+}
