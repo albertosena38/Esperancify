@@ -17,4 +17,4 @@ Projeto acadêmico com práticas de front-end, acessibilidade e deploy profissio
 
 ## 🌍 Deploy
 Disponível via GitHub Pages:  
-[https://seuusuario.github.io/esperancify](https://seuusuario.github.io/esperancify)
+https://github.com/albertosena38/Esperancify)
